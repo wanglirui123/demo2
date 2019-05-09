@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Recommend from './views/recommend.vue'
+import Article from './views/article.vue'
+import Discover from './views/discover.vue'
+import Local from './views/local.vue'
+import User from './views/user.vue'
 
 Vue.use(Router)
 
@@ -10,16 +15,42 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      redirect: { "name": "home" },
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+      path: '/home',
+      name: 'home',
+      component: Home,
+      redirect: { "name": "recommend" },
+      children: [
+        {
+          path: '/home/recommend',
+          name: 'recommend',
+          component: Recommend
+        },
+        {
+          path: '/home/article',
+          name: 'article',
+          component: Article
+        },
+        {
+          path: '/home/discover',
+          name: 'discover',
+          component: Discover
+        },
+        {
+          path: '/home/local',
+          name: 'local',
+          component: Local
+        },
+        {
+          path: '/home/user',
+          name: 'user',
+          component: User
+        }
+
+      ]
+    },
+
   ]
 })
