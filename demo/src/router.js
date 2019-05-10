@@ -18,6 +18,11 @@ export default new Router({
       redirect: { "name": "home" },
     },
     {
+      path: '/article',
+      name: 'article',
+      component: Article
+    },
+    {
       path: '/home',
       name: 'home',
       component: Home,
@@ -28,11 +33,7 @@ export default new Router({
           name: 'recommend',
           component: Recommend
         },
-        {
-          path: '/home/article',
-          name: 'article',
-          component: Article
-        },
+        
         {
           path: '/home/discover',
           name: 'discover',
