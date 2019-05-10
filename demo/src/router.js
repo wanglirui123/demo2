@@ -6,6 +6,7 @@ import Article from './views/article.vue'
 import Discover from './views/faxian/discover.vue'
 import Local from './views/local.vue'
 import User from './views/user.vue'
+import Son from './views/son/son.vue'
 
 import Seek from './views/son/seek.vue'
 import Menu from './views/son/menu.vue'
@@ -35,11 +36,17 @@ var rorter = new Router({
       name: 'menu',
       component: Menu
 
-     },
-     {
+    },
+    {
       path: '/article',
       name: 'article',
       component: Article
+    },
+    {
+      path: '/son',
+      name: 'son',
+      component: Son
+
     },
     {
       path: '/home',
@@ -52,7 +59,7 @@ var rorter = new Router({
           name: 'recommend',
           component: Recommend
         },
-        
+
         {
           path: '/home/discover',
           name: 'discover',
@@ -80,7 +87,7 @@ var rorter = new Router({
           path: '/home/user',
           name: 'user',
           component: User,
-        },{
+        }, {
           path: '/home/deng',
           name: 'deng',
           component: deng,

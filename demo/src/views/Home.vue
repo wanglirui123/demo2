@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <router-view/>
+
     <div class="footer">
       <router-link to="/home/recommend" tag="span">
         <i class="iconfont icon-ren">&#xe619;</i>
