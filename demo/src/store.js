@@ -115,7 +115,8 @@ export default new Vuex.Store({
         'date':'2018-11-12',
         'url':'https://s1.st.meishij.net/r/78/128/13032078/a13032078_153293131725964.jpg'
       },
-    ]
+    ],
+    
   },
   mutations: {
 

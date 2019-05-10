@@ -74,20 +74,19 @@ export default {
 $sc: 25;
 .box {
   width: 100%;
-  position: fixed;
+  background: #fff;
   .head {
     width: 100%;
     height: 44 / $sc + rem;
-    background: transparent;
+    background: #F5F5F5;
     float: left;
     display: flex;
     justify-content: space-between;
     text-align: center;
-
     .i1 {
       width: 52 / $sc + rem;
       height: 44 / $sc + rem;
-
+      margin-top:10/$sc+rem;
       i {
         font-size: 22 / $sc + rem;
       }
@@ -98,9 +97,9 @@ $sc: 25;
     }
     div {
       display: flex;
+       margin-top:10/$sc+rem;
       .i2 {
         height: 44 / $sc + rem;
-
         i {
           font-size: 22 / $sc + rem;
         }
@@ -154,6 +153,7 @@ $sc: 25;
         p {
           text-align: center;
           font-size: 12 / $sc + rem;
+           margin-top:10/$sc+rem;
         }
       }
     }

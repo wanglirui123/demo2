@@ -47,17 +47,18 @@ $sc: 25;
     justify-content: space-around;
     flex: 1;
     text-align: center;
-     i {
+    span {
+      margin-top:5/$sc+rem;
+      i {
         font-size: 20 / $sc + rem;
-
       }
       div {
         font-size: 14 / $sc + rem;
       }
     }
+  }
   span.router-link-exact-active {
-      color: #ff4c39;
-    }
+    color: #ff4c39;
+  }
 }
-
 </style>
