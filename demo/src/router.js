@@ -7,9 +7,13 @@ import Discover from './views/discover.vue'
 import Local from './views/local.vue'
 import User from './views/user.vue'
 import deng from './views/deng.vue'
+import zhu from './views/zhu.vue'
+import vuejsonp from 'vue-jsonp'
+import axios from 'axios'
 
+Vue.use(vuejsonp)
 Vue.use(Router)
-
+Vue.prototype.axios = axios
 var rorter = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
@@ -52,6 +56,22 @@ var rorter = new Router({
           path: '/home/deng',
           name: 'deng',
           component: deng,
+        },{
+          path: '/home/zhu',
+          name: 'zhu',
+          component: zhu,
+          // redirect : { name : 'shouji'},
+          // children : [
+          //   {
+          //     path : '/home/zhu/youxiang',
+          //     name : 'youxiang',
+          //     component : 'youxiang'
+          //   },{
+          //     path : '/home/zhu/shouji',
+          //     name : 'shouji',
+          //     component : 'shouji'
+          //   },
+          // ]
         }
 
       ]
