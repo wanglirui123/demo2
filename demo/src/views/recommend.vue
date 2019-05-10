@@ -155,7 +155,6 @@
 </template>
 
 <script>
-import { Swipe, SwipeItem } from "mint-ui";
 import { mapState } from "vuex";
 export default {
   computed: {
