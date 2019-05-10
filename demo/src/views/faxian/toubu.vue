@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 //头部
 html,body{background:#f5f5f5;}
 #topbar{height: 3.125rem;width: 100%;display: flex;background:#fefefe;position:fixed;top:0px;left:0px;z-index:1000;text-align:center;}
