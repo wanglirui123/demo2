@@ -6,14 +6,18 @@ import Article from './views/article.vue'
 import Discover from './views/discover.vue'
 import Local from './views/local.vue'
 import User from './views/user.vue'
+
 import Seek from './views/son/seek.vue'
 import Menu from './views/son/menu.vue'
 import Hottest from './views/son/hottest.vue'
 import Newest from './views/son/newest.vue'
 
+import deng from './views/deng.vue'
+
+
 Vue.use(Router)
 
-export default new Router({
+var rorter = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -75,7 +79,11 @@ export default new Router({
         {
           path: '/home/user',
           name: 'user',
-          component: User
+          component: User,
+        },{
+          path: '/home/deng',
+          name: 'deng',
+          component: deng,
         }
 
       ]
@@ -83,3 +91,17 @@ export default new Router({
 
   ]
 })
+// router.beforeEach((to,from,next)=>{
+//   if(to.meta&& to.meta.deng){
+//     if(localStorage.uid){
+//         next()
+//     }else{
+//       next({
+//           path : '/login'
+//       })
+//     }
+//   }else{
+//     next()
+//   }
+// })
+export default rorter
