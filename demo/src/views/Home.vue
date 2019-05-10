@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <router-view/>
+
     <div class="footer">
       <router-link to="/home/recommend" tag="span">
         <i class="iconfont icon-ren">&#xe619;</i>
@@ -42,7 +43,7 @@ $sc: 25;
     bottom: 0;
     display: flex;
     width: 100%;
-    height: 80 / $sc + rem;
+    height: 55 / $sc + rem;
     background: ghostwhite;
     justify-content: space-between;
     span {
@@ -50,11 +51,11 @@ $sc: 25;
       text-align: center;
       flex-direction: column;
       i {
-        font-size: 30 / $sc + rem;
+        font-size: 20 / $sc + rem;
         color: #666;
       }
       div {
-        font-size: 23 / $sc + rem;
+        font-size: 14 / $sc + rem;
       }
     }
     span.router-link-exact-active {
