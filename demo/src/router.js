@@ -6,6 +6,10 @@ import Article from './views/article.vue'
 import Discover from './views/discover.vue'
 import Local from './views/local.vue'
 import User from './views/user.vue'
+import Seek from './views/son/seek.vue'
+import Menu from './views/son/menu.vue'
+import Hottest from './views/son/hottest.vue'
+import Newest from './views/son/newest.vue'
 
 Vue.use(Router)
 
@@ -16,6 +20,16 @@ export default new Router({
     {
       path: '/',
       redirect: { "name": "home" },
+    },
+    {
+      path: '/seek',
+      name: 'seek',
+      component: Seek
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: Menu
     },
     {
       path: '/home',
@@ -41,7 +55,20 @@ export default new Router({
         {
           path: '/home/local',
           name: 'local',
-          component: Local
+          component: Local,
+          redirect: { "name": "hewest" },
+          children: [
+            {
+              path: '/home/local/hewest',
+              name: 'hewest',
+              component: Hottest,
+            },
+            {
+              path: '/home/local/newest',
+              name: 'newest',
+              component: Newest,
+            }
+          ]
         },
         {
           path: '/home/user',
