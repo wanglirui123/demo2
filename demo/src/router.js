@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Recommend from './views/recommend.vue'
 import Article from './views/article.vue'
-import Discover from './views/discover.vue'
+import Discover from './views/faxian/discover.vue'
 import Local from './views/local.vue'
 import User from './views/user.vue'
 
