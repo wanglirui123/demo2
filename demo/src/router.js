@@ -30,6 +30,12 @@ export default new Router({
       path: '/menu',
       name: 'menu',
       component: Menu
+
+     },
+     {
+      path: '/article',
+      name: 'article',
+      component: Article
     },
     {
       path: '/home',
@@ -42,11 +48,7 @@ export default new Router({
           name: 'recommend',
           component: Recommend
         },
-        {
-          path: '/home/article',
-          name: 'article',
-          component: Article
-        },
+        
         {
           path: '/home/discover',
           name: 'discover',

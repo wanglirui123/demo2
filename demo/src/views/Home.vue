@@ -7,7 +7,7 @@
         <div>推荐</div>
       </router-link>
 
-      <router-link to="/home/article" tag="span">
+      <router-link to="/article" tag="span">
         <i class="iconfont icon-ren">&#xe628;</i>
         <div>文章精选</div>
       </router-link>
@@ -49,6 +49,7 @@ $sc: 25;
     text-align: center;
      i {
         font-size: 20 / $sc + rem;
+
       }
       div {
         font-size: 14 / $sc + rem;
@@ -58,4 +59,5 @@ $sc: 25;
       color: #ff4c39;
     }
 }
+
 </style>
