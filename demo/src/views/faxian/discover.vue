@@ -3,11 +3,12 @@
        <Hander/>
        <div class="main">
            <div class="sss">
-               <router-link to="" tag="div" class="tu"><img src="https://s1.c.meishij.net/wap7/images/ms_home_find_shicai@3x.png" /> </router-link>
-               <router-link to="" tag="div" class="tu"><img src="https://s1.c.meishij.net/wap7/images/ms_home_find_caidan@3x.png" /> </router-link>
-               <router-link to="" tag="div" class="tu"><img src="https://s1.c.meishij.net/wap7/images/ms_home_find_zhuanti@3x.png" /> </router-link>
-               <router-link to="" tag="div" class="tu"><img src="https://s1.c.meishij.net/wap7/images/ms_home_find_wenzhang@3x.png" /> </router-link>
+               <router-link to="/home/shicai" tag="div" class="tu"><img src="https://s1.c.meishij.net/wap7/images/ms_home_find_shicai@3x.png" /> </router-link>
+               <router-link to="/home/caidan" tag="div" class="tu"><img src="https://s1.c.meishij.net/wap7/images/ms_home_find_caidan@3x.png" /> </router-link>
+               <router-link to="/home/zhuanti" tag="div" class="tu"><img src="https://s1.c.meishij.net/wap7/images/ms_home_find_zhuanti@3x.png" /> </router-link>
+               <router-link to="/home/wenzhang" tag="div" class="tu"><img src="https://s1.c.meishij.net/wap7/images/ms_home_find_wenzhang@3x.png" /> </router-link>
             </div>
+            <router-view></router-view>
             <div class="iitem">
                 <div class="i_t">热门视频菜谱</div>
                 <span class="i_tag">视频菜谱</span>
@@ -51,17 +52,18 @@ export default {
     padding-top: 3.125rem;
     overflow: auto;
 }
-.sss{
+.main .sss{
     width: 100%;
     height:7.5rem;
     display: flex;
+    box-sizing: border-box;
     background: #fff;
     border-bottom: .0625rem solid #ddd;
-    padding: 0px 1.5625% 3.125%;
+    padding: 0px .5rem .5rem;
 }
 .sss .tu{
     width: 25%;
-    padding: 0 .1875rem;
+    padding: 0 .3rem;
 }
 .sss img{
     height: 100%;
@@ -161,5 +163,15 @@ export default {
     position: absolute;
     left: 14px;
     bottom: 10px;
+}
+.info span{
+    display: block;
+    height: 30px;
+    width: 40px;
+    position: absolute;
+    right: 14px;
+    bottom: 20px;
+    background: url( ../../assets/fximg/video.png ) center no-repeat;
+    background-size: 100% 100%;
 }
 </style>

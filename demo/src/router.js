@@ -14,6 +14,10 @@ import Hottest from './views/son/hottest.vue'
 import Newest from './views/son/newest.vue'
 
 import deng from './views/deng.vue'
+import ShiCai from './views/faxian/shicai/shicai.vue'
+import CaiDan from './views/faxian/caidan/caidan.vue'
+import ZhuanTi from './views/faxian/zhuanti/zhuanti.vue'
+import WenZhang from './views/faxian/wenzhang/wenzhang.vue'
 
 
 Vue.use(Router)
@@ -65,6 +69,27 @@ var rorter = new Router({
           name: 'discover',
           component: Discover
         },
+            {
+              path:'/home/shicai',
+              name:'shicai',
+              component: ShiCai
+            },
+            {
+              path:'/home/caidan',
+              name:'caidan',
+              component: CaiDan
+            },
+            {
+              path:'/home/zhuanti',
+              name:'zhuanti',
+              component: ZhuanTi
+            },
+            {
+              path:'/home/wenzhang',
+              name:'wenzhang',
+              component: WenZhang
+            },
+        
         {
           path: '/home/local',
           name: 'local',
