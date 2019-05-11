@@ -5,19 +5,19 @@
       <div class="main_news_nav">
         <ul>
           <li>
-            <router-link to="" class="list_zw">饮食健康</router-link>
+            <router-link to="/wenzhang/wenzhangYSJK" class="list_zw">饮食健康</router-link>
           </li>
            <li>
-            <router-link to="" class="list_zw">功能性调理</router-link>
+            <router-link to="/wenzhang/wenzhangGNXTL" class="list_zw">功能性调理</router-link>
           </li>
            <li>
-            <router-link to="" class="list_zw">人群膳食</router-link>
+            <router-link to="/wenzhang/wenzhangRQSS" class="list_zw">人群膳食</router-link>
           </li>
            <li>
-            <router-link to="" class="list_zw">疾病调理</router-link>
+            <router-link to="/wenzhang/wenzhangJBTL" class="list_zw">疾病调理</router-link>
           </li>
            <li>
-            <router-link to="" class="list_zw">烹饪技巧</router-link>
+            <router-link to="/wenzhang/wenzhangPRJQ" class="list_zw">烹饪技巧</router-link>
           </li>
         </ul>
       </div>
@@ -31,6 +31,7 @@
           </mt-swipe>
         </div>
       </div>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -48,22 +49,22 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+$sc : 25;
   .hander_wz{
     width: 100%;
   }
   .main_wz{
     width: 100%;
-    padding-top: 5.5rem;
-    padding-bottom: 3.125rem;
+    padding-top: 88/$sc+rem;
   }
   .main_news_nav{
     width: 100%;
-    height: 44px;
-    line-height: 44px;
+    height:  44/$sc+rem;
+    line-height:  44/$sc+rem;
     position: fixed;
     left: 0px;
-    top: 44px;
+    top:  44/$sc+rem;
     background: #fefefe;
     box-sizing: border-box;
     overflow: scroll;
@@ -73,12 +74,12 @@ export default {
   .main_news_nav ul{
     padding: 0px 0px;
     font-size: 0px;
-    width: 31.25rem;
+    width:500/$sc+rem;
   }
   .main_news_nav ul li{
     display: inline-block;
     vertical-align: top;
-    width: 100px;
+    width:  100/$sc+rem;
     text-align: center;
     overflow: hidden;
   }
@@ -88,12 +89,12 @@ export default {
     display: inline-block;
     vertical-align: top;
   }
-  .router-link-exact-active{
+  .router-link-active{
     color: #ff4c35;
   }
   .main_banner{
     width: 100%;
-    height: 16rem;
+    height:  260/$sc+rem;
   }
   .main_banner img{
     width: 100%;

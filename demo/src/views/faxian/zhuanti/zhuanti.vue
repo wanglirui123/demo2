@@ -59,36 +59,37 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+$sc : 25;
   .hander_zt{
     width: 100%;
   }
   .main_zt{
     width: 100%;
-    min-height: 41.6875rem;
-    padding-top: 3.75rem;
-    padding-bottom: 3.125rem;
+    min-height: 667/$sc+rem;
+    padding-top: 50/$sc+rem;
+    padding-bottom: 50/$sc+rem;
   }
   .item_zt{
     position: relative;
     width: 100%;
-    margin-top: .625rem;
+    margin-top: 10/$sc+rem;
     background-color: #fdfdfd;
     box-sizing: border-box;
-    padding-bottom: 1.25rem;
+    padding-bottom: 20/$sc+rem;
   }
   .item_num_zt{
     position: absolute;
     right: 5%;
-    top: 1.25rem;
+    top: 20/$sc+rem;
   }
   .item_zt .item_num_zt img{
     display: inline-block;
     vertical-align: top;
-    width: 1rem;
+    width: 16/$sc+rem;
   }
   .item_num_zt span{
-    font-size: .875rem;
+    font-size: 14/$sc+rem;
     color: #fdfdfd;
   }
   .item_zt img{
@@ -101,25 +102,25 @@ export default {
   .item_author_zt{
     float: right;
     margin-right: 5%;
-    margin-top: -2.8125rem;
+    margin-top: -45/$sc+rem;
   }
   .item_author_zt img{
     display: block;
-    width: 3.125rem;
+    width: 50/$sc+rem;
     border-radius: 100%;
     border: rgba(255,255,255,0.5) .1875rem solid;
     margin: 0 auto;
   }
   .item_author_zt em{
-    font-size: .875rem;
+    font-size: 14px;
     color: #ff5151;
   }
   .item_desc_zt h2{
     display: block;
     width: 65%;
-    margin: .625rem 0 0 5%;
-    font-size: 1rem;
+    margin: 10/$sc+rem 0 0 5%;
+    font-size: 16px;
     color: #000;
-    line-height: 1.375rem;
+    line-height: 22/$sc+rem;
   }
 </style>
