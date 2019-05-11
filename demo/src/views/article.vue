@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import {mapState,mapMutations,mapGetters,mapActions} from 'vuex';
+import {mapState} from 'vuex';
 export default {
     computed:{
         ...mapState(['article'])

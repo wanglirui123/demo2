@@ -19,7 +19,7 @@
       <mt-swipe :auto="2000">
         <mt-swipe-item>
           <ul>
-            <li v-for="(item,index) in One.list" :key="index">
+            <li v-for="(item,index) in list" :key="index">
               <img :src="item.qq" alt>
               <h5>{{item.ww}}</h5>
               <h6>{{item.ee}}</h6>
@@ -116,7 +116,7 @@
     </div>
     <div class="four">
       <ul>
-        <li v-for="(item,index) in One.arr" :key="index">
+        <li v-for="(item,index) in arr" :key="index">
           <img :src="item.rr" alt>
           <span>{{item.tt}}</span>
         </li>
@@ -155,10 +155,11 @@
 </template>
 
 <script>
+import { Swipe, SwipeItem } from 'mint-ui';
 import { mapState } from "vuex";
 export default {
   computed: {
-    ...mapState(["One", "list", "arr"])
+    ...mapState([ "list", "arr"])
   }
 };
 </script>
