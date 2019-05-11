@@ -4,9 +4,10 @@
       <span>
         <i class="iconfont icon-ren">&#xe617;</i>
       </span>
-      <div class="k">
-        <i class="iconfont icon-ren">&#xe615;</i>搜索你感兴趣的
-      </div>
+       <router-link to = '/sous'>
+       <div class="k">
+       <i class="iconfont icon-ren">&#xe615;</i>搜索你感兴趣的
+      </div></router-link>
       <span>
         
          <router-link to = '/son'> <i class="iconfont icon-ren">&#xe621;</i></router-link>
@@ -14,7 +15,6 @@
       </span>
       <router-view></router-view>
     </div>
-
 
     <div class="tup">
       <mt-swipe :auto="2000">
@@ -127,8 +127,9 @@
     </div>
     <div class = 'last'>
         <div class = 'last1'>
-            <span v-for = '(item,index) in 30' :key = 'index'>
-                <img   src="" alt="">
+            <span v-for = '(item,index) in tuijian' :key = 'index'>
+                <img   :src="item.yy" alt="">
+                <p>{{item.uu}}</p>
             </span>
         
         </div>
@@ -138,10 +139,21 @@
 
 <script>
 import { Swipe, SwipeItem } from "mint-ui";
-import {mapState} from 'vuex'
+import {mapState} from 'vuex';
+import axios from 'axios';
 export default {
+    data(){
+        return{
+            tuijian:[]
+        }
+    },
     computed:{
         ...mapState(['One','list','arr'])
+    },
+    created(){
+        axios.get('http://localhost:3000/tuij').then((res)=>{
+            this.tuijian = res.data
+        })
     }
 };
 </script>
@@ -170,7 +182,8 @@ $sc: 25;
     .k {
       height: 32 / $sc + rem;
       width: 275 / $sc + rem;
-      font-size: 17px;
+      font-size: 13px;
+      color:dimgrey;
       margin-top: 5px;
       text-align: center;
       line-height: 32 / $sc + rem;
@@ -278,17 +291,28 @@ $sc: 25;
   .last{
       width:100%;
       height:2692 / $sc + rem;
-      background:red;
+     margin-bottom: 55 / $sc + rem;
       .last1{
           width:348 / $sc + rem;
-          background:yellow;
+          
           margin-left:15px;
           span{
               width:50%;
               height:172 / $sc + rem;
-              background:green;
+             
               display:inline-block;
               margin-bottom: 5px;
+              position:relative;
+              
+              img{width:100%}
+              p{    text-align: center;
+                    color: #fff;
+                    text-shadow: 0px 1px 0px rgba(0,0,0,0.7);
+                    font-size:14px;
+                    position:absolute;
+                    bottom:1px;
+                    margin-left:40%;
+               }
           }
       }
       

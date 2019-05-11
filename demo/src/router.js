@@ -7,6 +7,7 @@ import Discover from './views/discover.vue'
 import Local from './views/local.vue'
 import User from './views/user.vue'
 import Son from './views/son/son.vue'
+import Sous from './views/son/sous.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/son',
       name: 'son',
       component: Son
+    },
+    {
+      path: '/sous',
+      name: 'sous',
+      component: Sous
     },
     {
       path: '/home',
