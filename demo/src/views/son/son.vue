@@ -31,7 +31,7 @@ export default {
 $sc: 25;
 .xiaoxi{
   height:50 / $sc + rem;
-  
+  background:white;
   display:flex;
   line-height: 50 / $sc + rem;
   .mm{
@@ -45,7 +45,7 @@ $sc: 25;
   background:whitesmoke;
   display:flex;
   border-bottom: 1px solid rgb(201, 195, 195);
-  p{font-size: 16px;color: #000;margin-left:10px;}
+  p{font-size: 16px;color: #000;margin-left:10px;margin-top:20px;}
     
   img{height:50 / $sc + rem;width:50 / $sc + rem;margin:15px 0 0 10px}
   
@@ -58,15 +58,17 @@ $sc: 25;
   font-size: 16px;
   line-height:50 / $sc + rem;
   position:relative;
+  
   p{
     position:absolute;
     top:0;
-    background:white;
+   background:rgb(241, 241, 241);
     display:none;
     img{float:left;}
   }
 }
 .dianji:hover p{display:block}
+
     
 </style>
 

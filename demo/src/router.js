@@ -9,11 +9,15 @@ import User from './views/user.vue'
 import Son from './views/son/son.vue'
 import Bar from './views/son/bar.vue'
 import Tab from './views/son/tab.vue'
+import Sous from './views/son/sous.vue'
 
 import Seek from './views/son/seek.vue'
 import Menu from './views/son/menu.vue'
 import Hottest from './views/son/hottest.vue'
 import Newest from './views/son/newest.vue'
+import Morning from './views/son/morning.vue'
+
+
 
 import deng from './views/deng.vue'
 import ShiCai from './views/faxian/shicai/shicai.vue'
@@ -65,6 +69,16 @@ var rorter = new Router({
       name: 'son',
       component: Son
 
+    },
+    {
+      path: '/sous',
+      name: 'sous',
+      component: Sous
+    },
+    {
+      path: '/morning',
+      name: 'morning',
+      component: Morning
     },
     {
       path: '/home',

@@ -151,6 +151,70 @@ export default new Vuex.Store({
         'rr': 'https://s1.c.meishij.net/wap6/images/v6/fujinnew.png',
         'tt': '附近'
       }
+    ],
+    cai: [
+      {
+        'ii': 'https://t12.baidu.com/it/u=1857008354,3246514386&fm=76',
+        'oo': '六个月胎儿彩超'
+      },
+      {
+        'ii': 'https://t11.baidu.com/it/u=1978432705,3415818999&fm=76',
+        'oo': '学习煲仔饭'
+      },
+      {
+        'ii': 'https://f11.baidu.com/it/u=247848361,1671294164&fm=76',
+        'oo': '制作蛋糕培训'
+      },
+      
+    
+    ],
+    cai1: [
+      {
+        'iii': 'https://t11.baidu.com/it/u=1978432705,3415818999&fm=76',
+        'ooo': '学习煲仔饭'
+      },
+      {
+        'iii': 'https://t12.baidu.com/it/u=1973745269,3414193612&fm=76',
+        'ooo': '学酸辣粉'
+      },
+      {
+        'iii': 'https://f11.baidu.com/it/u=411186904,3259317644&fm=76',
+        'ooo': '孕妇四个月'
+      },
+      
+    
+    ],
+    cai2: [
+      {
+        'iii': 'http://images.meishij.net/p/20190510/d4c5cece638911cf7a9f1ac10431a915.jpg',
+        'ooo': '兼职牛排餐'
+      },
+      {
+        'iii': 'http://images.meishij.net/p/20190510/6b5c7742fc50c23e03e3eb040d017721.jpg',
+        'ooo': '番茄鱼丸堡'
+      },
+      {
+        'iii': 'http://images.meishij.net/p/20190510/5fda1ec6fe910402dfe67e74978ad89e.jpg',
+        'ooo': '奖项油焖笋'
+      },
+      
+    
+    ],
+    cai3: [
+      {
+        'iii': 'https://t11.baidu.com/it/u=1978432705,3415818999&fm=76',
+        'ooo': '学习煲仔饭'
+      },
+      {
+        'iii': 'https://t11.baidu.com/it/u=2024310535,2873586026&fm=76',
+        'ooo': '七个月胎儿'
+      },
+      {
+        'iii': 'https://t12.baidu.com/it/u=320149619,2690408377&fm=76',
+        'ooo': '学做早点'
+      },
+      
+    
     ]
 
   },
