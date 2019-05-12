@@ -1,5 +1,8 @@
 <template>
-  <div class="hot">
+  <div class="hot"
+    v-infinite-scroll="loadMore"
+    infinite-scroll-disabled="loading"
+    infinite-scroll-distance="10">
     <div class="test" v-for="(item,index) in list" :key="index">
       <div class="src">
            <img :src="item.img" alt>
@@ -22,20 +25,39 @@
 
 <script>
 import axios from "axios";
+import { Toast } from 'mint-ui';
 export default {
   data() {
     return {
       list: [],
-      url: "http://localhost:3000/",
-      type: ""
+      url: "http://10.9.25.38:80/",
+      type: "",
+      loading:false 
     };
   },
   mounted() {
-    axios.get(this.url + "nr").then(res => {
-      this.list = res.data;
-    });
+    
   },
-  methods: {}
+  methods: {
+    loadMore() {
+      
+      if (this.list.length > 50) {
+        Toast({
+          message: "已经到底了...",
+          duration: 1500
+        });
+        return;
+      }
+      this.loading = true;
+      setTimeout(() => {
+        axios.get(this.url + "eee").then(res => {
+          this.list = this.list.concat(res.data.serve.nr);
+          this.loading = false;
+        });
+      }, 2000);
+        
+    }
+  }
 };
 </script>
 
@@ -61,7 +83,7 @@ $sc: 25;
     }
     .right {
       display: inline-block;
-      vertical-align: top;
+      // vertical-align: top;
       width: 335 / $sc + rem;
       display: block;
       padding-left: 40 / $sc + rem;

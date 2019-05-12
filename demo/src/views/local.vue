@@ -81,6 +81,8 @@ $sc: 25;
     background: #F5F5F5;
     float: left;
     display: flex;
+    position: fixed;
+    z-index: 100;
     justify-content: space-between;
     text-align: center;
     .i1 {
@@ -118,6 +120,7 @@ $sc: 25;
   .swiper-container {
     height: 210 / $sc + rem;
     width: 100%;
+    margin-top:44 / $sc + rem;
     img {
       height: 187 / $sc + rem;
       width: 100%;

@@ -1,10 +1,15 @@
 <template>
-  <div class="hot">
+  <div
+    class="hot"
+    v-infinite-scroll="loadMore"
+    infinite-scroll-disabled="loading"
+    infinite-scroll-distance="10"
+  >
     <div class="test" v-for="(item,index) in list" :key="index">
       <div class="src">
-           <img :src="item.img" alt>
+        <img :src="item.img" alt>
       </div>
-     
+
       <div class="right">
         <span class="name">{{item.name}}</span>
         <span class="em">{{item.em}}</span>
@@ -22,27 +27,46 @@
 
 <script>
 import axios from "axios";
+import { Toast } from "mint-ui";
 export default {
   data() {
     return {
       list: [],
-      url: "http://localhost:3000/",
-      type: ""
+      url: "http://10.9.25.38:80/",
+      type: "",
+      loading: false
     };
   },
   mounted() {
-    axios.get(this.url + "zr").then(res => {
-      this.list = res.data;
-    });
   },
-  methods: {}
+  methods: {
+    loadMore() {
+      if (this.list.length > 50) {
+          Toast({
+            message: "已经到底了...",
+            duration: 1500
+          });
+        return;
+      }
+      // this.loading = true;
+      
+        setTimeout(() => {
+          axios.get(this.url + "eee").then(res => {
+            this.list = this.list.concat(res.data.serve.zr);
+            this.loading = false;
+            console.log(res)
+          });
+        }, 2000);
+
+      
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 $sc: 25;
 .hot {
-
   .test {
     width: 100%;
     margin: 0 auto;
@@ -53,15 +77,15 @@ $sc: 25;
     box-sizing: border-box;
     float: left;
     .src {
-        position: absolute;
-        img{
-         width: 30 / $sc + rem;
-         height: 30 / $sc + rem;
-        }
+      position: absolute;
+      img {
+        width: 30 / $sc + rem;
+        height: 30 / $sc + rem;
+      }
     }
     .right {
       display: inline-block;
-      vertical-align: top;
+      // vertical-align: top;
       width: 335 / $sc + rem;
       display: block;
       padding-left: 40 / $sc + rem;
