@@ -20,7 +20,7 @@
       <mt-swipe :auto="2000">
         <mt-swipe-item>
            <ul>
-               <li v-for = '(item,index) in One.list' :key = 'index'>
+               <li v-for = '(item,index) in list' :key = 'index'>
                    <img :src="item.qq" alt="">
                    <h5>{{item.ww}}</h5>
                    <h6>{{item.ee}}</h6>
@@ -102,8 +102,8 @@
     </div>
     <div class = 'four'>
         <ul>
-            <li v-for = '(item,index) in One.arr' :key = 'index'>
-                <img :src="item.rr" alt="">
+           <li v-for = '(item,index) in arr' :key = 'index'>
+                <router-link to = '/morning'> <img :src="item.rr" alt=""></router-link>
                 <span>{{item.tt}}</span>
             </li>
         </ul>
@@ -148,11 +148,12 @@ export default {
         }
     },
     computed:{
-        ...mapState(['One','list','arr'])
+        ...mapState(['list','arr'])
     },
     created(){
-        axios.get('http://localhost:3000/tuij').then((res)=>{
-            this.tuijian = res.data
+        axios.get('http://10.9.25.38:80/'+"eee").then((res)=>{
+            this.tuijian = res.data.serve.tuij
+            console.log(res)
         })
     }
 };
@@ -208,7 +209,7 @@ $sc: 25;
             color:white;
             img{width:100%;height:145 / $sc + rem}
             h5{position:absolute;left:10 / $sc + rem;top: 90 / $sc + rem;}
-            h6{position:absolute;left:10px;top: 100 / $sc + rem;}
+            h6{position:absolute;left:10px;top: 110 / $sc + rem;}
         }
     }
     h3{font-size:17px;margin-left:170 / $sc + rem}
@@ -273,11 +274,12 @@ $sc: 25;
      
           
           strong{
-          font-size: 18px;
+          font-size: 16px;
           color: #333;
           position:absolute;
-          bottom: 11px;
-          left:170 / $sc + rem;;
+          bottom: 7px;
+          left:170 / $sc + rem;
+          
           
           }
          i{

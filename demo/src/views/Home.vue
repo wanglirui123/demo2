@@ -8,7 +8,7 @@
         <div>推荐</div>
       </router-link>
 
-      <router-link to="/home/article" tag="span">
+      <router-link to="/article" tag="span">
         <i class="iconfont icon-ren">&#xe628;</i>
         <div>文章精选</div>
       </router-link>
@@ -45,22 +45,21 @@ $sc: 25;
     width: 100%;
     height: 55 / $sc + rem;
     background: ghostwhite;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex: 1;
+    text-align: center;
     span {
-      flex: 1;
-      text-align: center;
-      flex-direction: column;
+      margin-top:5/$sc+rem;
       i {
         font-size: 20 / $sc + rem;
-        color: #666;
       }
       div {
         font-size: 14 / $sc + rem;
       }
     }
-    span.router-link-exact-active {
-      color: #ff4c39;
-    }
+  }
+  span.router-link-exact-active {
+    color: #ff4c39;
   }
 }
 </style>
