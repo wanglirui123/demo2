@@ -95,6 +95,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$sc: 25;
     *{
         margin: 0;
         padding : 0;

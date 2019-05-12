@@ -51,7 +51,7 @@
            
 
 <script>
-import axios from 'axios';
+
 import {mapState} from 'vuex';
 export default {
   data(){
@@ -65,7 +65,7 @@ export default {
     }
   },
   created(){
-    axios.get('http://10.9.25.38:80/'+"eee").then((res)=>{
+    this.axios.get('http://10.9.25.38:80/'+"eee").then((res)=>{
         this.wmm = res.data.serve.wm
       })
   },

@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import { Toast } from 'mint-ui';
 export default {
   data() {
@@ -50,11 +49,11 @@ export default {
       }
       this.loading = true;
       setTimeout(() => {
-        axios.get(this.url + "eee").then(res => {
+       this.axios.get(this.url + "eee").then(res => {
           this.list = this.list.concat(res.data.serve.nr);
           this.loading = false;
         });
-      }, 2000);
+      }, 1000);
         
     }
   }

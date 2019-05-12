@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import axios from "axios";
+
 import { Toast } from 'mint-ui';
 export default {
   data() {
@@ -50,7 +50,7 @@ export default {
       }
       this.loading = true;
       setTimeout(() => {
-        axios.get(this.url + "eee").then(res => {
+        this.axios.get(this.url + "eee").then(res => {
           this.arr = this.arr.concat(res.data.serve.searc);
         });
       }, 2000);

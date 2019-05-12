@@ -1,17 +1,10 @@
 <template>
-    <div id="app">
-       <header>
-           <p @click="fs"><i class="icon iconfont">&#xe630;</i>返回</p>
-            <span>登录美食杰</span>
-           <p><router-link :to="{name : 'zhu'}">注册</router-link></p>
-       </header>
-       <div class="yi">
-           <input type="text" placeholder="手机号/邮箱/用户名" v-model="str">
+    <div>
+        <nav>{{stt}}</nav>
+         <div class="yi">
+           <input type="text" placeholder="邮箱" v-model="str">
            <input type="text"  placeholder="密码" v-model="mi">
-           <a>登录</a>
-       </div>
-       <div class="er">
-           <a href="">忘记密码？</a>
+           <a>注册</a>
        </div>
        <div class="san">
            <a>
@@ -27,64 +20,37 @@
                微博登录
            </a>
        </div>
-       <router-view></router-view>
+       <!-- <router-view></router-view> -->
     </div>
 </template>
 <script>
 export default {
     data() {
         return {
-            str : '' ,
-            mi : ''
-        }
-    },
-    methods: {
-        fs(){
-            this.$router.go(-1)
+            str : '',
+            mi : '',
+            yan : '',
+            stt : "",
         }
     },
 }
 </script>
 <style lang="scss" scoped>
-*{
-    margin: 0;
-    padding: 0;
-}
-#app{
-    width: 100%;
-     header{
-        width: 92%;
-        padding : 0 4%;
-        height: 2.8rem;
-        display: flex;
-        background: #fff;
-        line-height: 2.8rem;
-        margin-bottom: 1.2rem;
-        justify-content:space-between;
-        span{
-            //margin: 0 18%;
-           font-size: 1.2rem
-        }
-        p{
-             font-size: 18px;
-            color: red;   
-            a{
-                color: red;
-            }
-        }
+  nav{
+        height: 2.25rem;
     }
-    .yi{
-         width: 100%;
+      .yi{
+         width: 94%;
           font-size: 1.2rem;
         input{
-            width: 92% ;
+            width: 100% ;
             padding : .8rem 4%;
-            border: none;
+            border: 1px solid #fff;
             border-bottom: 1px solid #ddd;
             color: #999
         }
         a{
-            width: 92%;
+            width: 100%;
             background: red;
             display: inline-block;
             height: 2rem;
@@ -136,6 +102,4 @@ export default {
             }
         }
     }
-}
-   
 </style>

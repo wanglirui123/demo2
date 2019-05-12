@@ -30,7 +30,6 @@
 
 <script>
 import {mapState} from 'vuex';
-import axios from "axios";
 export default {
     data(){
         return {
@@ -44,7 +43,7 @@ export default {
         }
     },
     mounted(){
-        axios.get(this.url + "eee").then(res => {
+        this.axios.get(this.url + "eee").then(res => {
           this.article = this.article.concat(res.data.serve.article);
         });
     }

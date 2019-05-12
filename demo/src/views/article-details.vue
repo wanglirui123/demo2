@@ -53,7 +53,7 @@
 </template>
 <script>
 import {mapState,mapMutations,mapGetters,mapActions} from 'vuex';
-import axios from "axios";
+
 export default {
     data(){
       return {
@@ -69,7 +69,7 @@ export default {
       }
     },
     created(){
-      axios.get(this.url + "eee").then(res => {
+      this.axios.get(this.url + "eee").then(res => {
           this.details = res.data.serve.details;
           console.log(this.details)
         }).then(res => {

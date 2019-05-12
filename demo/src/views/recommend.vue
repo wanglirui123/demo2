@@ -140,7 +140,6 @@
 <script>
 import { Swipe, SwipeItem } from "mint-ui";
 import {mapState} from 'vuex';
-import axios from 'axios';
 export default {
     data(){
         return{
@@ -151,7 +150,7 @@ export default {
         ...mapState(['list','arr'])
     },
     created(){
-        axios.get('http://10.9.25.38:80/'+"eee").then((res)=>{
+        this.axios.get('http://10.9.25.38:80/'+"eee").then((res)=>{
             this.tuijian = res.data.serve.tuij
             console.log(res)
         })
