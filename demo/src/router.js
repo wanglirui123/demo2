@@ -7,6 +7,8 @@ import Discover from './views/faxian/discover.vue'
 import Local from './views/local.vue'
 import User from './views/user.vue'
 import Son from './views/son/son.vue'
+import Bar from './views/son/bar.vue'
+import Tab from './views/son/tab.vue'
 
 import Seek from './views/son/seek.vue'
 import Menu from './views/son/menu.vue'
@@ -38,8 +40,20 @@ var rorter = new Router({
     {
       path: '/menu',
       name: 'menu',
-      component: Menu
-
+      component: Menu,
+      redirect: { "name": "bar" },
+      children: [
+        {
+          path: '/menu/bar',
+          name: 'bar',
+          component: Bar
+        },
+        {
+          path: '/menu/tab',
+          name: 'tab',
+          component: Tab
+        }
+      ]
     },
     {
       path: '/article',
@@ -69,27 +83,27 @@ var rorter = new Router({
           name: 'discover',
           component: Discover
         },
-            {
-              path:'/home/shicai',
-              name:'shicai',
-              component: ShiCai
-            },
-            {
-              path:'/home/caidan',
-              name:'caidan',
-              component: CaiDan
-            },
-            {
-              path:'/home/zhuanti',
-              name:'zhuanti',
-              component: ZhuanTi
-            },
-            {
-              path:'/home/wenzhang',
-              name:'wenzhang',
-              component: WenZhang
-            },
-        
+        {
+          path: '/home/shicai',
+          name: 'shicai',
+          component: ShiCai
+        },
+        {
+          path: '/home/caidan',
+          name: 'caidan',
+          component: CaiDan
+        },
+        {
+          path: '/home/zhuanti',
+          name: 'zhuanti',
+          component: ZhuanTi
+        },
+        {
+          path: '/home/wenzhang',
+          name: 'wenzhang',
+          component: WenZhang
+        },
+
         {
           path: '/home/local',
           name: 'local',

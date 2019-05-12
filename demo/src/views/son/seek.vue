@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       arr: [],
-      url: "http://localhost:3000/",
+      url: "http://10.9.25.38:80/",
       loading: false
     };
   },
@@ -50,8 +50,8 @@ export default {
       }
       this.loading = true;
       setTimeout(() => {
-        axios.get(this.url + "searc").then(res => {
-          this.arr = this.arr.concat(res.data);
+        axios.get(this.url + "eee").then(res => {
+          this.arr = this.arr.concat(res.data.serve.searc);
         });
       }, 2000);
     }
