@@ -1,11 +1,14 @@
 <template>
     <div class="article">
+       
         <div class="article_head">
-            <p>为你推荐</p>
+            <router-link to="/">
+                <p>为你推荐<span title="返回首页">☜☜☜</span></p>
+            </router-link>
         </div>
         <!-- 主体盒子 -->
         <div class="main_box">
-            <a class="main_list_a" href="" v-for="item in article" :key="item.id">
+            <a @click="routerTo(item.id)" class="main_list_a" href="" v-for="item in article" :key="item.id">
                 <div class="main_list">
                     <div class="main_text">
                         <p class="text_bt">{{item.title}}</p>
@@ -27,9 +30,23 @@
 
 <script>
 import {mapState} from 'vuex';
+import axios from "axios";
 export default {
-    computed:{
-        ...mapState(['article'])
+    data(){
+        return {
+            article:[],
+            url:"http://10.9.25.38:80/"
+            }
+    },
+    methods:{
+        routerTo(id){
+            this.$router.push( '/article-details/'+id);
+        }
+    },
+    mounted(){
+        axios.get(this.url + "eee").then(res => {
+          this.article = this.article.concat(res.data.serve.article);
+        });
     }
 }
 </script>
@@ -48,12 +65,17 @@ img{border:0;vertical-align:middle}
 }
 .article_head{
     p{//标题样式
+        width:100%;
         font-size:.9375rem;
         height: 1.375rem;
         color: #333;
         line-height: 1.375rem;
         font-weight: 900;
         margin-top:.9375rem;
+         span{
+             float: right;
+             cursor:pointer;//鼠标移上变小手
+         }
     }
 }
 .main_box{

@@ -3,6 +3,9 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Recommend from './views/recommend.vue'
 import Article from './views/article.vue'
+
+import Article_details from './views/article-details.vue'
+
 import Discover from './views/faxian/discover.vue'
 import Local from './views/local.vue'
 import User from './views/user.vue'
@@ -59,10 +62,15 @@ var rorter = new Router({
         }
       ]
     },
-    {
-      path: '/article',
+     {
+      path: '/article/',
       name: 'article',
-      component: Article
+      component: Article,
+    },
+    {
+      path: '/article-details/:id',
+      name: 'Article_details',
+      component: Article_details
     },
     {
       path: '/son',
