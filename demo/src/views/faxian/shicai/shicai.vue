@@ -80,48 +80,49 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$sc : 25;
 .hander_sc{
   width: 100%;
 }
 #main_con{
   width: 100%;
-  min-height: 41.6875rem;
-  padding-top: 3.125rem;
-  padding-bottom: 3.125rem;
+  min-height: 667/$sc+rem;
+  padding-top: 50/$sc+rem;
+  padding-bottom: 50/$sc+rem;
   
 }
 .item_sc{
     width: 100%;
     float: left;
-    padding: .625rem 1.875rem;
+    padding: 10/$sc+rem 5%;
     box-sizing: border-box;
     border-bottom: 1px solid #e6e6e6;
 }
 .item_sc img{
     display: block;
-    width: 5.625rem;
-    height: 5.625rem;
-    margin-right: -100%;
+    width: 90/$sc+rem;
+    height: 90/$sc+rem;
     float: left;
+    margin-right: -100%;
 }
 .right_sc{
     width: 100%;
     float: left;
-    height: 5.625rem;
+    height: 90/$sc+rem;
 }
 .right_inner_sc{
-      margin-left: 6.25rem;
+    margin-left: 100/$sc+rem;
 }
 .right_inner_sc h2{
-    font-size: 1rem;
-    line-height: 1.75rem;
+    font-size: 16px;
+    line-height: 28/$sc+rem;
     color: #000;
 }
 .right_inner_tags_sc{
     width: 100%;
     font-size: 0;
-    margin-top: .25rem;
-    height: 1.75rem;
+    margin-top: 4/$sc+rem;
+    height: 28/$sc+rem;
     overflow: hidden;
 }
 .right_inner_tags_sc span{
@@ -129,18 +130,18 @@ export default {
     float: left;
     background: #e8e8e8;
     color: #686868;
-    padding: 0px 10px;
-    font-size: .875rem;
-    margin: .125rem;
-    line-height: 1.75rem;
-    height: 1.8125rem;
+    padding: 0 10/$sc+rem;
+    font-size: 14/$sc+rem;
+    margin: 2/$sc+rem;
+    line-height: 28/$sc+rem;
+    height: 28/$sc+rem;
 }
 .right_inner_row{
     background: url(../../../assets/fximg/p_con_icon_rl1@3x.png) left no-repeat;
     color: #46c01b;
     background-size: 1.125rem 1.125rem;
-    padding-left: 1.5625rem;
-    padding-top: .7rem;
-    font-size: .8rem;
+    padding-left: 30/$sc+rem;
+    padding-top: 10/$sc+rem;
+    font-size: 14px;
 }
 </style>

@@ -4,64 +4,47 @@
       <div class="main_cd">
           <div class="cd_tab">
               <div class="cd_tab_w">
-                <button class="aaa active_cd" @click="change('CaidanZx')">最新</button>
-                <button class="aaa" @click="change('CaidanZr')">最热</button>
-                <keep-alive>
-                  <component :is="componentNames"></component>
-                </keep-alive>
+                <router-link to="/caidan/caidanZX" class="aaa">最新</router-link>
+                <router-link to="/caidan/caidanZR" class="aaa">最热</router-link>
               </div>
+              <router-view></router-view>
           </div>  
-      <CaidanZx/>
       </div>
   </div>
 </template>
 <script>
 import Hander from './caidanharder'
-import CaidanZx from './caidanZX' 
-import CaidanZr from './caidanZR'
-
 export default {
-  data(){
-    return{
-      componentNames:'CaidanZx'
-    }
-  },
   components:{
-    Hander,
-    CaidanZx,
-    CaidanZr
-  },
-  methods: {
-    change(val){
-      this.componentNames = val
-    }
-  },
+    Hander
+  }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+$sc : 25;
   .hander_cd{
     width:100%;
   }
   .main_cd{
     width: 100%;
-    min-height: 41.6875rem;
-    padding-top: 3.125rem;
-    padding-bottom: 3.125rem;
+    min-height: 667/$sc+rem;
+    padding-top: 50/$sc+rem;
+    padding-bottom: 50/$sc+rem;
   }
   .cd_tab{
     background: #f5f5f5;
-    padding: 0px 20px;
+    padding:0px 3.125%;
     width: 100%;
     box-sizing: border-box;
     font-size: 0px;
     text-align: center;
   }
   .cd_tab_w{
-    height: 30px;
-    margin: 16px auto 6px;
+    height: 30/$sc+rem;
+    margin: 16/$sc+rem auto 6/$sc+rem;
     border: 1px solid #ff4c35;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 6/$sc+rem;
     overflow: hidden;
     display: inline-block;
     vertical-align: top;
@@ -70,13 +53,13 @@ export default {
   .aaa{
     display: inline-block;
     vertical-align: top;
-    width: 80px;
+    width: 80/$sc+rem;
     font-size: 12px;
     color: #ff4c35;
-    line-height: 30px;
+    line-height: 30/$sc+rem;
     border-right: 1px solid #ff4c35;
   }
-  .active_cd{
+  .router-link-active{
     background: #ff4c35;
     color: #fff;
   }

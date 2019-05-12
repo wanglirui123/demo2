@@ -8,7 +8,7 @@
 <style lang="scss">
 @import "./assets/css/text.css";
  body{
-         width: 100%;
+        width: 100%;
         background: #eee;
         height: 100%;
     }

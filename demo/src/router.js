@@ -25,9 +25,16 @@ import Morning from './views/son/morning.vue'
 import deng from './views/deng.vue'
 import ShiCai from './views/faxian/shicai/shicai.vue'
 import CaiDan from './views/faxian/caidan/caidan.vue'
+import CaiDanZX from './views/faxian/caidan/caidanZX.vue'
+import CaiDanZR from './views/faxian/caidan/caidanZR.vue'
 import ZhuanTi from './views/faxian/zhuanti/zhuanti.vue'
 import WenZhang from './views/faxian/wenzhang/wenzhang.vue'
-
+import WenZhangYSJK from './views/faxian/wenzhang/wenzhangYSJK.vue'
+import WenZhangGNXTL from './views/faxian/wenzhang/wenzhangGNXTL.vue'
+import WenZhangRQSS from './views/faxian/wenzhang/wenzhangRQSS.vue'
+import WenZhangJBTL from './views/faxian/wenzhang/wenzhangJBTL.vue'
+import WenZhangPRJQ from './views/faxian/wenzhang/wenzhangPRJQ.vue'
+import RiShiJi from './views/faxian/rishiji/rishiji.vue'
 
 Vue.use(Router)
 
@@ -125,6 +132,72 @@ var rorter = new Router({
           name: 'wenzhang',
           component: WenZhang
         },
+         { path:'/shicai',
+          name:'shicai',
+          component: ShiCai
+        },
+        {
+          path:'/caidan',
+          name:'caidan',
+          redirect:{'name':'caidanZX'},
+          component: CaiDan,
+          children:[
+            {
+              path:'/caidan/caidanZX',
+              name:'caidanZX',
+              component: CaiDanZX
+            },
+            {
+              path:'/caidan/caidanZR',
+              name:'caidanZR',
+              component: CaiDanZR
+            }
+          ]
+        },
+        {
+          path:'/zhuanti',
+          name:'zhuanti',
+          component: ZhuanTi
+        },
+        {
+          path:'/wenzhang',
+          name:'wenzhang',
+          redirect:{'name':'wenzhangYSJK'},
+          component: WenZhang,
+          children:[
+            {
+              path:'/wenzhang/wenzhangYSJK',
+              name:'wenzhangYSJK',
+              component: WenZhangYSJK
+            },
+            {
+              path:'/wenzhang/wenzhangGNXTL',
+              name:'wenzhangGNXTL',
+              component: WenZhangGNXTL
+            },
+            {
+              path:'/wenzhang/wenzhangRQSS',
+              name:'wenzhangRQSS',
+              component: WenZhangRQSS
+            },
+            {
+              path:'/wenzhang/wenzhangJBTL',
+              name:'wenzhangJBTL',
+              component: WenZhangJBTL
+            },
+            {
+              path:'/wenzhang/wenzhangPRJQ',
+              name:'wenzhangPRJQ',
+              component: WenZhangPRJQ
+            }
+          ]
+        },
+        {
+          path:'/rishiji',
+          name:'rishiji',
+          component: RiShiJi
+        },
+        
 
         {
           path: '/home/local',

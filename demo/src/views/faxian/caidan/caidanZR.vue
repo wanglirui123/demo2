@@ -74,42 +74,43 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+$sc :25;
   .cd_list{
     width: 100%;
   }
   .item_cd{
     position: relative;
     width: 100%;
-    margin-top: .625rem;
+    margin-top: 10/$sc+rem;
     background-color: #fdfdfd;
-    padding: .9375rem 5%;
+    padding: 15/$sc+rem 5%;
     box-sizing: border-box;
   }
   .item_cd h2{
-    font-size: 1rem;
+    font-size: 16px;
     color: #000;
     display: block;
     text-align: center;
-    line-height: 1.5rem;
+    line-height: 24/$sc+rem;
   }
   .item_cd em{
-    font-size: .75rem;
+    font-size: 12px;
     color: #ff5151;
     display: block;
     text-align: center;
-    line-height: 1.125rem;
+    line-height: 18/$sc+rem;
   }
   .item_cd ul{
     font-size: 0;
     width: 100%;
-    margin-top: .625rem;
+    margin-top:10/$sc+rem;
   }
   .item_cd ul li{
     display: inline-block;
     vertical-align: top;
     width: 25%;
-    padding: 0 .125rem;
+    padding: 0 2/$sc+rem;
     box-sizing: border-box;
   }
   .item_cd ul li img{
@@ -118,8 +119,8 @@ export default {
   }
   .author_cd{
     display: block;
-    width: 2.5rem;
+    width: 40/$sc+rem;
     border-radius: 100%;
-    margin: -1.25rem auto 0;
+    margin: -20/$sc+rem auto 0;
   }
 </style>
