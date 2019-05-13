@@ -13,14 +13,13 @@ import Son from './views/son/son.vue'
 import Bar from './views/son/bar.vue'
 import Tab from './views/son/tab.vue'
 import Sous from './views/son/sous.vue'
+import Rong from './views/son/rong.vue'
 
 import Seek from './views/son/seek.vue'
 import Menu from './views/son/menu.vue'
 import Hottest from './views/son/hottest.vue'
 import Newest from './views/son/newest.vue'
 import Morning from './views/son/morning.vue'
-
-
 
 import deng from './views/deng.vue'
 import ShiCai from './views/faxian/shicai/shicai.vue'
@@ -35,9 +34,14 @@ import WenZhangRQSS from './views/faxian/wenzhang/wenzhangRQSS.vue'
 import WenZhangJBTL from './views/faxian/wenzhang/wenzhangJBTL.vue'
 import WenZhangPRJQ from './views/faxian/wenzhang/wenzhangPRJQ.vue'
 import RiShiJi from './views/faxian/rishiji/rishiji.vue'
+import zhu from './views/zhu.vue'
+import info from './views/info.vue'
+import vuejsonp from 'vue-jsonp'
+import axios from 'axios'
 
+Vue.use(vuejsonp)
 Vue.use(Router)
-
+Vue.prototype.axios = axios
 var rorter = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
@@ -50,6 +54,11 @@ var rorter = new Router({
       path: '/seek',
       name: 'seek',
       component: Seek
+    },
+    {
+      path: '/rong',
+      name: 'rong',
+      component: Rong
     },
     {
       path: '/menu',
@@ -118,23 +127,9 @@ var rorter = new Router({
           component: ShiCai
         },
         {
-          path: '/home/caidan',
-          name: 'caidan',
-          component: CaiDan
-        },
-        {
           path: '/home/zhuanti',
           name: 'zhuanti',
           component: ZhuanTi
-        },
-        {
-          path: '/home/wenzhang',
-          name: 'wenzhang',
-          component: WenZhang
-        },
-         { path:'/shicai',
-          name:'shicai',
-          component: ShiCai
         },
         {
           path:'/caidan',
@@ -154,11 +149,7 @@ var rorter = new Router({
             }
           ]
         },
-        {
-          path:'/zhuanti',
-          name:'zhuanti',
-          component: ZhuanTi
-        },
+        
         {
           path:'/wenzhang',
           name:'wenzhang',
@@ -225,6 +216,27 @@ var rorter = new Router({
           path: '/home/deng',
           name: 'deng',
           component: deng,
+        }, {
+          path : '/home/user/info',
+          name : "info" ,
+          component : info
+        },
+        {
+          path: '/home/zhu',
+          name: 'zhu',
+          component: zhu,
+          // redirect : { name : 'shouji'},
+          // children : [
+          //   {
+          //     path : '/home/zhu/youxiang',
+          //     name : 'youxiang',
+          //     component : 'youxiang'
+          //   },{
+          //     path : '/home/zhu/shouji',
+          //     name : 'shouji',
+          //     component : 'shouji'
+          //   },
+          // ]
         }
 
       ]

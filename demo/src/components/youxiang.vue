@@ -1,18 +1,10 @@
 <template>
-    <div id="app">
-       <header>
-           <p @click="fs"><i class="icon iconfont">&#xe630;</i>返回</p>
-            <span>登录美食杰</span>
-           <p><router-link :to="{name : 'zhu'}">注册</router-link></p>
-       </header>
-       <nav class="shi">{{stt}}</nav>
-       <div class="yi">
-           <input type="text" placeholder="手机号/邮箱/用户名" v-model="str">
+    <div>
+        <nav class="shi">{{stt}}</nav>
+         <div class="yi">
+           <input type="text" placeholder="邮箱" v-model="str">
            <input type="text"  placeholder="密码" v-model="mi">
-           <a @click="fm">登录</a>
-       </div>
-       <div class="er">
-           <a href="">忘记密码？</a>
+           <a @click="fw">注册</a>
        </div>
        <div class="san">
            <a>
@@ -28,36 +20,38 @@
                微博登录
            </a>
        </div>
-       <router-view></router-view>
+       <!-- <router-view></router-view> -->
     </div>
 </template>
 <script>
 export default {
     data() {
         return {
-            str : '' ,
+            str : '',
             mi : '',
-            stt : ''
+            yan : '',
+            stt : "",
         }
     },
     methods: {
-        fs(){
-            this.$router.go(-1)
-        },
-        fm(){
-            this.axios.get("/api/deng",{
-                params : {
-                    deng : this.str,
-                    mi : this.mi
-                }
-            }).then(({data})=>{
-                console.log(data)
+        fw(){
+            var ss = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9]+(\.[a-zA-Z]+)$/ //判断手机的正则
+            var tt = /\w{6,16}/
+            if(!ss.test(this.str)){
+               return this.stt = "请正确输入邮箱地址"
+            }
+            if(!tt.test(this.mi)){
+               return this.stt = `密码为6~16位， 您只输了${this.mi.length}位`
+            }
+            var than = this
+            this.axios.get("/api/www?zhang="+than.str+"&mi="+than.mi
+            ).then(({data})=>{
+                console.log(data.a)
                 if(data.a>0){
                     alert(data.zhi)
-                    localStorage.meiuserName = this.str
-                    this.$router.push({name:"user"})
+                    this.$router.push({name:"deng"})
                 }else{
-                    this.stt = data.zhi
+                    than.stt = data.zhi
                 }
             })
         }
@@ -65,35 +59,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-$sc: 25;
-*{
-    margin: 0;
-    padding: 0;
-}
-#app{
-    width: 100%;
-     header{
-        width: 92%;
-        padding : 0 4%;
-        height: 2.8rem;
-        display: flex;
-        background: #fff;
-        line-height: 2.8rem;
-       // margin-bottom: 1.2rem;
-        justify-content:space-between;
-        span{
-            //margin: 0 18%;
-           font-size: 18 / $sc + rem;
-        }
-        p{
-             font-size: 18px;
-            color: red;   
-            a{
-                color: red;
-            }
-        }
+  nav{
+        height: 2.25rem;
     }
-    .shi{
+     .shi{
         height: 2.25rem;
         line-height: 2.25rem;
         width: 80%;
@@ -101,18 +70,18 @@ $sc: 25;
         color: red;
         font-size: 18px;
     }
-    .yi{
-         width: 100%;
+      .yi{
+         width: 92%;
           font-size: 1.2rem;
         input{
-            width: 92% ;
+            width: 100% ;
             padding : .8rem 4%;
-            border: none;
+            border: 1px solid #fff;
             border-bottom: 1px solid #ddd;
             color: #999
         }
         a{
-            width: 92%;
+            width: 100%;
             background: red;
             display: inline-block;
             height: 2rem;
@@ -164,6 +133,4 @@ $sc: 25;
             }
         }
     }
-}
-   
 </style>

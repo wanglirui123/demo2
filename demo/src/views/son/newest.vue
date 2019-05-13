@@ -5,23 +5,26 @@
     infinite-scroll-disabled="loading"
     infinite-scroll-distance="10"
   >
-    <div class="test" v-for="(item,index) in list" :key="index">
-      <div class="src">
-        <img :src="item.img" alt>
-      </div>
+    <router-link to="/rong">
+      <div class="test" v-for="(item,index) in list" :key="index">
+        <div class="src">
+          <img :src="item.img" alt>
+        </div>
 
-      <div class="right">
-        <span class="name">{{item.name}}</span>
-        <span class="em">{{item.em}}</span>
-        <span class="fy">{{item.fy}}</span>
-        <div class="sc">
-          <p>{{item.i}}</p>
-          <span class="tp" v-for="(item,v,index) in item.sc" :key="index">
-            <img :src="item.img">
-          </span>
+        <div class="right">
+          <span class="name">{{item.name}}</span>
+          <span class="em">{{item.em}}</span>
+          <span class="fy">{{item.fy}}</span>
+          <div class="sc">
+            <p>{{item.i}}</p>
+            <span class="tp" v-for="(item,v,index) in item.sc" :key="index">
+              <img :src="item.img">
+            </span>
+          </div>
         </div>
       </div>
-    </div>
+    </router-link>
+    <router-visw></router-visw>
   </div>
 </template>
 
@@ -37,28 +40,25 @@ export default {
       loading: false
     };
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
     loadMore() {
       if (this.list.length > 50) {
-          Toast({
-            message: "已经到底了...",
-            duration: 1500
-          });
+        Toast({
+          message: "已经到底了...",
+          duration: 1500
+        });
         return;
       }
       // this.loading = true;
-      
-        setTimeout(() => {
-          axios.get(this.url + "eee").then(res => {
-            this.list = this.list.concat(res.data.serve.zr);
-            this.loading = false;
-            console.log(res)
-          });
-        }, 2000);
 
-      
+      setTimeout(() => {
+        axios.get(this.url + "eee").then(res => {
+          this.list = this.list.concat(res.data.serve.zr);
+          this.loading = false;
+          console.log(res);
+        });
+      }, 2000);
     }
   }
 };
