@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <header>
+        <header @click="ff">
            <img src="../assets/logo1.png" class="er">
            <div>
                <img src="https://s1.c.meishij.net/images/default/tx2_3.png" class="san">
@@ -85,12 +85,18 @@ export default {
         console.log(111,to) 
         next((vm)=>{
              console.log(vm,vm.$router)
-            if(!localStorage.uid){
+            if(!localStorage.meiuserName){
                 vm.$router.push({name:"deng"})
             }
         })
       
-    }
+    },
+    methods: {
+        ff(){
+            console.log(this.$router)
+            this.$router.push({name : "info"})
+        }
+    },
 }
 </script>
 

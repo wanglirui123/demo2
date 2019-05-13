@@ -8,6 +8,7 @@ import Local from './views/local.vue'
 import User from './views/user.vue'
 import deng from './views/deng.vue'
 import zhu from './views/zhu.vue'
+import info from './views/info.vue'
 import vuejsonp from 'vue-jsonp'
 import axios from 'axios'
 
@@ -56,7 +57,12 @@ var rorter = new Router({
           path: '/home/deng',
           name: 'deng',
           component: deng,
-        },{
+        }, {
+          path : '/home/user/info',
+          name : "info" ,
+          component : info
+        },
+        {
           path: '/home/zhu',
           name: 'zhu',
           component: zhu,

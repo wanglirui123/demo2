@@ -5,10 +5,11 @@
             <span>登录美食杰</span>
            <p><router-link :to="{name : 'zhu'}">注册</router-link></p>
        </header>
+       <nav class="shi">{{stt}}</nav>
        <div class="yi">
            <input type="text" placeholder="手机号/邮箱/用户名" v-model="str">
            <input type="text"  placeholder="密码" v-model="mi">
-           <a>登录</a>
+           <a @click="fm">登录</a>
        </div>
        <div class="er">
            <a href="">忘记密码？</a>
@@ -35,12 +36,30 @@ export default {
     data() {
         return {
             str : '' ,
-            mi : ''
+            mi : '',
+            stt : ''
         }
     },
     methods: {
         fs(){
             this.$router.go(-1)
+        },
+        fm(){
+            this.axios.get("/api/deng",{
+                params : {
+                    deng : this.str,
+                    mi : this.mi
+                }
+            }).then(({data})=>{
+                console.log(data)
+                if(data.a>0){
+                    alert(data.zhi)
+                    localStorage.meiuserName = this.str
+                    this.$router.push({name:"user"})
+                }else{
+                    this.stt = data.zhi
+                }
+            })
         }
     },
 }
@@ -59,7 +78,7 @@ export default {
         display: flex;
         background: #fff;
         line-height: 2.8rem;
-        margin-bottom: 1.2rem;
+       // margin-bottom: 1.2rem;
         justify-content:space-between;
         span{
             //margin: 0 18%;
@@ -72,6 +91,14 @@ export default {
                 color: red;
             }
         }
+    }
+    .shi{
+        height: 2.25rem;
+        line-height: 2.25rem;
+        width: 80%;
+        padding: 0 10%;
+        color: red;
+        font-size: 18px;
     }
     .yi{
          width: 100%;
