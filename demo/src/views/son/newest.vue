@@ -24,7 +24,7 @@
         </div>
       </div>
     </router-link>
-    <router-visw></router-visw>
+     <router-view/>
   </div>
 </template>
 
@@ -59,14 +59,6 @@ export default {
             console.log(res)
           });
         }, 1000);
-
-      setTimeout(() => {
-        axios.get(this.url + "eee").then(res => {
-          this.list = this.list.concat(res.data.serve.zr);
-          this.loading = false;
-          console.log(res);
-        });
-      }, 2000);
     }
   }
 };

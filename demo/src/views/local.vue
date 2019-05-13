@@ -51,7 +51,7 @@
 <script>
 import Swiper from "swiper";
 import "swiper/dist/css/swiper.css";
-// import { mapState} from "vuex";
+import { mapState} from "vuex";
 export default {
   computed: {
     ...mapState(["banner", "menu"])
