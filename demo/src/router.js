@@ -13,6 +13,7 @@ import Son from './views/son/son.vue'
 import Bar from './views/son/bar.vue'
 import Tab from './views/son/tab.vue'
 import Sous from './views/son/sous.vue'
+import Rong from './views/son/rong.vue'
 
 import Seek from './views/son/seek.vue'
 import Menu from './views/son/menu.vue'
@@ -55,6 +56,12 @@ var rorter = new Router({
       path: '/seek',
       name: 'seek',
       component: Seek
+    }
+    ,
+    {
+      path: '/rong',
+      name: 'rong',
+      component: Rong
     },
     {
       path: '/menu',
@@ -74,7 +81,7 @@ var rorter = new Router({
         }
       ]
     },
-     {
+    {
       path: '/article/',
       name: 'article',
       component: Article,
@@ -128,63 +135,63 @@ var rorter = new Router({
           component: ZhuanTi
         },
         {
-          path:'/caidan',
-          name:'caidan',
-          redirect:{'name':'caidanZX'},
+          path: '/caidan',
+          name: 'caidan',
+          redirect: { 'name': 'caidanZX' },
           component: CaiDan,
-          children:[
+          children: [
             {
-              path:'/caidan/caidanZX',
-              name:'caidanZX',
+              path: '/caidan/caidanZX',
+              name: 'caidanZX',
               component: CaiDanZX
             },
             {
-              path:'/caidan/caidanZR',
-              name:'caidanZR',
+              path: '/caidan/caidanZR',
+              name: 'caidanZR',
               component: CaiDanZR
             }
           ]
         },
-        
+
         {
-          path:'/wenzhang',
-          name:'wenzhang',
-          redirect:{'name':'wenzhangYSJK'},
+          path: '/wenzhang',
+          name: 'wenzhang',
+          redirect: { 'name': 'wenzhangYSJK' },
           component: WenZhang,
-          children:[
+          children: [
             {
-              path:'/wenzhang/wenzhangYSJK',
-              name:'wenzhangYSJK',
+              path: '/wenzhang/wenzhangYSJK',
+              name: 'wenzhangYSJK',
               component: WenZhangYSJK
             },
             {
-              path:'/wenzhang/wenzhangGNXTL',
-              name:'wenzhangGNXTL',
+              path: '/wenzhang/wenzhangGNXTL',
+              name: 'wenzhangGNXTL',
               component: WenZhangGNXTL
             },
             {
-              path:'/wenzhang/wenzhangRQSS',
-              name:'wenzhangRQSS',
+              path: '/wenzhang/wenzhangRQSS',
+              name: 'wenzhangRQSS',
               component: WenZhangRQSS
             },
             {
-              path:'/wenzhang/wenzhangJBTL',
-              name:'wenzhangJBTL',
+              path: '/wenzhang/wenzhangJBTL',
+              name: 'wenzhangJBTL',
               component: WenZhangJBTL
             },
             {
-              path:'/wenzhang/wenzhangPRJQ',
-              name:'wenzhangPRJQ',
+              path: '/wenzhang/wenzhangPRJQ',
+              name: 'wenzhangPRJQ',
               component: WenZhangPRJQ
             }
           ]
         },
         {
-          path:'/rishiji',
-          name:'rishiji',
+          path: '/rishiji',
+          name: 'rishiji',
           component: RiShiJi
         },
-        
+
 
         {
           path: '/home/local',
@@ -213,9 +220,9 @@ var rorter = new Router({
           name: 'deng',
           component: deng,
         }, {
-          path : '/home/user/info',
-          name : "info" ,
-          component : info
+          path: '/home/user/info',
+          name: "info",
+          component: info
         },
         {
           path: '/home/zhu',
