@@ -42,7 +42,7 @@ export default {
       
       if (this.list.length > 50) {
         Toast({
-          message: "已经到底了...",
+          message: "",
           duration: 1500
         });
         return;

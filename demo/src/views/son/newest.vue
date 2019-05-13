@@ -43,12 +43,12 @@ export default {
     loadMore() {
       if (this.list.length > 50) {
           Toast({
-            message: "已经到底了...",
+            message: "",
             duration: 1500
           });
         return;
       }
-      // this.loading = true;
+      this.loading = true;
       
         setTimeout(() => {
           this.axios.get(this.url + "eee").then(res => {
