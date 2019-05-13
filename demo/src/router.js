@@ -36,6 +36,7 @@ import WenZhangJBTL from './views/faxian/wenzhang/wenzhangJBTL.vue'
 import WenZhangPRJQ from './views/faxian/wenzhang/wenzhangPRJQ.vue'
 import RiShiJi from './views/faxian/rishiji/rishiji.vue'
 import zhu from './views/zhu.vue'
+import info from './views/info.vue'
 import vuejsonp from 'vue-jsonp'
 import axios from 'axios'
 
@@ -122,23 +123,9 @@ var rorter = new Router({
           component: ShiCai
         },
         {
-          path: '/home/caidan',
-          name: 'caidan',
-          component: CaiDan
-        },
-        {
           path: '/home/zhuanti',
           name: 'zhuanti',
           component: ZhuanTi
-        },
-        {
-          path: '/home/wenzhang',
-          name: 'wenzhang',
-          component: WenZhang
-        },
-         { path:'/shicai',
-          name:'shicai',
-          component: ShiCai
         },
         {
           path:'/caidan',
@@ -158,11 +145,7 @@ var rorter = new Router({
             }
           ]
         },
-        {
-          path:'/zhuanti',
-          name:'zhuanti',
-          component: ZhuanTi
-        },
+        
         {
           path:'/wenzhang',
           name:'wenzhang',
@@ -229,7 +212,12 @@ var rorter = new Router({
           path: '/home/deng',
           name: 'deng',
           component: deng,
-        },{
+        }, {
+          path : '/home/user/info',
+          name : "info" ,
+          component : info
+        },
+        {
           path: '/home/zhu',
           name: 'zhu',
           component: zhu,

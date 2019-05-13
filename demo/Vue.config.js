@@ -1,11 +1,12 @@
-module.exprots = {
+console.log("pz");
+module.exports = {
     devServer : {
         proxy : {
-            "/hd" : {
+            "/api":{
                 "target" : "http://10.9.25.38:80",
                 "changeOrigin" : true ,
-                pathRewrite : {
-                    "^/hd" : ""
+                "pathRewrite":{
+                    "^/api":""
                 }
             }
         }

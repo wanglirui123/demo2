@@ -38,6 +38,7 @@ export default {};
 $sc: 25;
 .home {
   display: flex;
+  z-index: 200;
   .footer {
     position: fixed;
     bottom: 0;

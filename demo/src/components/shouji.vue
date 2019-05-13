@@ -60,15 +60,6 @@ export default {
         fr(){
             var ss = /^(138|135|133|150)\d{8}/ //判断手机的正则
             var tt = /\w{6,16}/
-            console.log(this.axios)
-            this.axios.get("/hd/add",{
-                params : {
-                    str : this.str ,
-                    mi  : this.mi
-                 }
-            }).then(({data})=>{
-                console.log(data)
-            })
             // Vue.jsonp("http://127.0.0.1/add",{
             //     str : this.str ,
             //     mi  : this.mi
@@ -81,14 +72,25 @@ export default {
             if(!tt.test(this.mi)){
                return this.stt = `密码为6~16位， 您只输了${this.mi.length}位`
             }
-            console.log(this.yan ===this.ma)
-            if(!this.yan ===this.ma){
+            console.log(this.yan ==this.ma)
+            if(this.yan !=this.ma){
               return  this.stt = "您输入的验证码不正确"
             }
              if(!this.yan){
                return this.stt = "请您输入验证码"
             }
-            
+            var than = this
+            this.axios.get("/api/www?zhang="+than.str+"&mi="+than.mi
+            ).then(({data})=>{
+                this.stt = '';
+                console.log(data.a)
+                if(data.a>0){
+                    alert(data.zhi)
+                    this.$router.push({name:"deng"})
+                }else{
+                    than.stt = data.zhi
+                }
+            })
         }
     },
      computed: {
@@ -117,16 +119,17 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$sc: 25;
     .shi{
         height: 2.25rem;
         line-height: 2.25rem;
         width: 80%;
         padding: 0 10%;
         color: red;
-        font-size: 18px;
+        font-size: 18 / $sc + rem;
     }
       .yi{
-         width: 94%;
+         width: 92%;
           font-size: 1.2rem;
           position: relative;
           
@@ -150,14 +153,16 @@ export default {
             margin : 1rem 4%;
         }
         .jiu{
-            height: 30px;
-            padding: 0 10px;
+            height: 40 / $sc + rem;
+            padding: 0 10 / $sc + rem;
             margin: 0;
             width: auto;
             opacity: 1;
             position : absolute;
-            top: 6px;
+            top: 6 / $sc + rem;
             right: 0;
+            font-size: 18/ $sc + rem;
+            line-height:  40 / $sc + rem;
         }
     }
     .er{
@@ -165,7 +170,7 @@ export default {
         text-align: center;
         a{
             color: #999; 
-            font-size: 16px
+            font-size: 16 / $sc + rem;
         }
        
     }

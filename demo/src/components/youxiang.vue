@@ -1,10 +1,10 @@
 <template>
     <div>
-        <nav>{{stt}}</nav>
+        <nav class="shi">{{stt}}</nav>
          <div class="yi">
            <input type="text" placeholder="邮箱" v-model="str">
            <input type="text"  placeholder="密码" v-model="mi">
-           <a>注册</a>
+           <a @click="fw">注册</a>
        </div>
        <div class="san">
            <a>
@@ -33,14 +33,45 @@ export default {
             stt : "",
         }
     },
+    methods: {
+        fw(){
+            var ss = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9]+(\.[a-zA-Z]+)$/ //判断手机的正则
+            var tt = /\w{6,16}/
+            if(!ss.test(this.str)){
+               return this.stt = "请正确输入邮箱地址"
+            }
+            if(!tt.test(this.mi)){
+               return this.stt = `密码为6~16位， 您只输了${this.mi.length}位`
+            }
+            var than = this
+            this.axios.get("/api/www?zhang="+than.str+"&mi="+than.mi
+            ).then(({data})=>{
+                console.log(data.a)
+                if(data.a>0){
+                    alert(data.zhi)
+                    this.$router.push({name:"deng"})
+                }else{
+                    than.stt = data.zhi
+                }
+            })
+        }
+    },
 }
 </script>
 <style lang="scss" scoped>
   nav{
         height: 2.25rem;
     }
+     .shi{
+        height: 2.25rem;
+        line-height: 2.25rem;
+        width: 80%;
+        padding: 0 10%;
+        color: red;
+        font-size: 18px;
+    }
       .yi{
-         width: 94%;
+         width: 92%;
           font-size: 1.2rem;
         input{
             width: 100% ;

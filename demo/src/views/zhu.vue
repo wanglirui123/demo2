@@ -54,7 +54,7 @@ $sc: 25;
         justify-content:space-between;
         span{
             //margin: 0 18%;
-           font-size: 1.2rem
+           font-size:18 / $sc + rem;
         }
         p{
              font-size: 18px;
